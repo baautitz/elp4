@@ -1,0 +1,9 @@
+*.vs
+*.user
+*.cache
+*exe
+backup/
+lib/
+bin/
+obj/
+.idea/
