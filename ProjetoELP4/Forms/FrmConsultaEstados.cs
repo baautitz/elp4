@@ -20,6 +20,10 @@ namespace ProjetoELP4 {
             oFrmCadastroEstados = (FrmCadastroEstados) frm;
         }
 
+        public override void ConhecaObjeto(object obj) {
+            oEstado = (Estados) obj;
+        }
+
         public override void Incluir() {
             oFrmCadastroEstados.ConhecaObjeto(oEstado);
             oFrmCadastroEstados.LimpaTxt();
@@ -40,10 +44,6 @@ namespace ProjetoELP4 {
             oFrmCadastroEstados.BloqueiaTxt();
             oFrmCadastroEstados.ShowDialog();
             oFrmCadastroEstados.DesbloqueiaTxt();
-        }
-
-        public override void ConhecaObjeto(object obj) {
-            oEstado = (Estados) obj;
         }
 
     }

@@ -26,6 +26,7 @@ namespace ProjetoELP4 {
 			frmCadastroEstados.SetFrmConsultaPaises(frmConsultaPaises);
 
             frmConsultaCidades.SetFrmCadastro(frmCadastroCidades);
+			frmCadastroCidades.SetFrmConsultaEstados(frmConsultaEstados);
         }
 
 		public void PecaPaises(object obj) {
