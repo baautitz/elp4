@@ -109,6 +109,7 @@
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces.cs" />
+    <Compile Include="Models\Pai.cs" />
     <Compile Include="Models\Paises.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

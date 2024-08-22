@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace ProjetoELP4 {
     public partial class FrmCadastroPaises : ProjetoELP4.FrmCadastros {
@@ -28,7 +22,7 @@ namespace ProjetoELP4 {
         }
 
         public override void CarregaTxt() {
-            txtCodigo.Text = oPais.Codigo; 
+            txtCodigo.Text = oPais.Codigo.ToString(); 
             txtPais.Text = oPais.Pais;
             txtSigla.Text = oPais.Sigla;
             txtDDI.Text = oPais.DDI;
@@ -53,7 +47,7 @@ namespace ProjetoELP4 {
 
         public override void Salvar() {
             base.Salvar();
-            oPais.Codigo = txtCodigo.Text;
+            oPais.Codigo = Convert.ToInt32(txtCodigo.Text);
             oPais.Pais = txtPais.Text;
             oPais.Sigla = txtSigla.Text;
             oPais.DDI = txtDDI.Text;

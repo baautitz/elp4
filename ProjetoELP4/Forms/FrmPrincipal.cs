@@ -17,7 +17,11 @@ namespace ProjetoELP4 {
 		Cidades aCidade;
 		public FrmPrincipal() {
 			interfaces = new Interfaces();
+			
 			oPais = new Paises();
+			oEstado = new Estados();
+			aCidade = new Cidades();
+
 			InitializeComponent();
 		}
 

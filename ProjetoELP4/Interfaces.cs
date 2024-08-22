@@ -1,9 +1,4 @@
 ﻿using ProjetoELP4.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoELP4 {
 	internal class Interfaces {
@@ -26,8 +21,11 @@ namespace ProjetoELP4 {
 			frmCadastroCidades = new FrmCadastroCidades();
 
 			frmConsultaPaises.SetFrmCadastro(frmCadastroPaises);
+			
 			frmConsultaEstados.SetFrmCadastro(frmCadastroEstados);
-			frmConsultaCidades.SetFrmCadastro(frmCadastroCidades);
+			frmCadastroEstados.SetFrmConsultaPaises(frmConsultaPaises);
+
+            frmConsultaCidades.SetFrmCadastro(frmCadastroCidades);
         }
 
 		public void PecaPaises(object obj) {
