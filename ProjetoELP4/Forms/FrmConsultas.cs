@@ -28,6 +28,10 @@ namespace ProjetoELP4 {
 		
 		}
 
+		public virtual void CarregaLV() { 
+		
+		}
+
 		private void btnIncluir_Click(object sender, EventArgs e) {
 			this.Incluir();
 		}

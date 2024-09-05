@@ -28,6 +28,8 @@ namespace ProjetoELP4 {
             oFrmCadastroEstados.ConhecaObjeto(oEstado);
             oFrmCadastroEstados.LimpaTxt();
             oFrmCadastroEstados.ShowDialog();
+
+            CarregaLV();
         }
 
         public override void Alterar() {
@@ -46,5 +48,15 @@ namespace ProjetoELP4 {
             oFrmCadastroEstados.DesbloqueiaTxt();
         }
 
-    }
+		public override void CarregaLV() {
+			base.CarregaLV();
+
+            ListViewItem listViewItem = new ListViewItem(oEstado.Codigo.ToString());
+            listViewItem.SubItems.Add(oEstado.Estado);
+            listViewItem.SubItems.Add(oEstado.OPais.Pais);
+
+            listV.Items.Add(listViewItem);
+		}
+
+	}
 }

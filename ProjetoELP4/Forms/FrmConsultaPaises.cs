@@ -23,6 +23,7 @@ namespace ProjetoELP4 {
             oFrmCadastroPaises.ConhecaObjeto(oPais);
             oFrmCadastroPaises.LimpaTxt();
             oFrmCadastroPaises.ShowDialog();
+            CarregaLV();
         }
 
         public override void Alterar() {
@@ -41,7 +42,19 @@ namespace ProjetoELP4 {
             oFrmCadastroPaises.DesbloqueiaTxt();
         }
 
-        public override void ConhecaObjeto(object obj) {
+		public override void CarregaLV() {
+			base.CarregaLV();
+
+            ListViewItem listViewItem = new ListViewItem(oPais.Codigo.ToString());
+            listViewItem.SubItems.Add(oPais.Pais);
+            listViewItem.SubItems.Add(oPais.DDI);
+            listViewItem.SubItems.Add(oPais.Sigla);
+            listViewItem.SubItems.Add(oPais.Moeda);
+
+            listV.Items.Add(listViewItem);
+		}
+
+		public override void ConhecaObjeto(object obj) {
             oPais = (Paises) obj;
         }
 

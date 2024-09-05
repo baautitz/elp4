@@ -23,7 +23,31 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.Estado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.Pais = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
+			// 
+			// listV
+			// 
+			this.listV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Codigo,
+            this.Estado,
+            this.Pais});
+			// 
+			// Codigo
+			// 
+			this.Codigo.Text = "Código";
+			// 
+			// Estado
+			// 
+			this.Estado.Text = "Estado";
+			this.Estado.Width = 472;
+			// 
+			// Pais
+			// 
+			this.Pais.Text = "País";
+			this.Pais.Width = 240;
 			// 
 			// FrmConsultaEstados
 			// 
@@ -37,5 +61,9 @@
 		}
 
 		#endregion
+
+		private System.Windows.Forms.ColumnHeader Codigo;
+		private System.Windows.Forms.ColumnHeader Estado;
+		private System.Windows.Forms.ColumnHeader Pais;
 	}
 }

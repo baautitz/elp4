@@ -29,6 +29,8 @@ namespace ProjetoELP4 {
             oFrmCadastroCidades.ConhecaObjeto(aCidade);
             oFrmCadastroCidades.LimpaTxt();
             oFrmCadastroCidades.ShowDialog();
+
+            CarregaLV();
         }
 
         public override void Alterar() {
@@ -47,5 +49,15 @@ namespace ProjetoELP4 {
             oFrmCadastroCidades.DesbloqueiaTxt();
         }
 
-    }
+		public override void CarregaLV() {
+			base.CarregaLV();
+
+            ListViewItem listViewItem = new ListViewItem(aCidade.Codigo.ToString());
+            listViewItem.SubItems.Add(aCidade.Cidade);
+            listViewItem.SubItems.Add(aCidade.OEstado.Estado);
+
+            listV.Items.Add(listViewItem);
+		}
+
+	}
 }
