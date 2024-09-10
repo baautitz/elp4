@@ -1,12 +1,7 @@
 ﻿using ProjetoELP4.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoELP4 {
-    internal class Paises : Pai {
+	internal class Paises : Pai {
 
         protected string pais;
         protected string ddi;

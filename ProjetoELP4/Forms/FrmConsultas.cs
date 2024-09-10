@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace ProjetoELP4 {
 	public partial class FrmConsultas : ProjetoELP4.FrmPai {
@@ -12,7 +6,15 @@ namespace ProjetoELP4 {
 			InitializeComponent();
 		}
 
-        public virtual void Incluir() {
+		public virtual void SetFrmCadastro(object frm) {
+
+		}
+
+		public virtual void ConhecaObjeto(object obj) {
+
+		}
+
+		public virtual void Incluir() {
 
 		}
 
@@ -24,12 +26,12 @@ namespace ProjetoELP4 {
 
 		}
 
-        public virtual void ConhecaObjeto(object obj) { 
+		public virtual void CarregaLV() { 
 		
 		}
 
-		public virtual void CarregaLV() { 
-		
+		public virtual void SalvaObjetoLista() {
+
 		}
 
 		private void btnIncluir_Click(object sender, EventArgs e) {
@@ -42,10 +44,6 @@ namespace ProjetoELP4 {
 
 		private void btnExcluir_Click(object sender, EventArgs e) {
 			this.Excluir();
-		}
-
-		public virtual void SetFrmCadastro(object frm) {
-
 		}
 	}
 }

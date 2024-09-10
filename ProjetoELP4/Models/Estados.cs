@@ -1,12 +1,7 @@
 ﻿using ProjetoELP4.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoELP4 {
-    internal class Estados : Pai {
+	internal class Estados : Pai {
 
         protected string estado;
         protected string uf;

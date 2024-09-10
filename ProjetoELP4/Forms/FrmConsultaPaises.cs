@@ -1,29 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProjetoELP4 {
-    public partial class FrmConsultaPaises : ProjetoELP4.FrmConsultas {
+	public partial class FrmConsultaPaises : ProjetoELP4.FrmConsultas {
 
         FrmCadastroPaises oFrmCadastroPaises;
         Paises oPais;
+        List<Paises> listaPaises;
         public FrmConsultaPaises() {
             InitializeComponent();
+            listaPaises = new List<Paises>();
         }
 
         public override void SetFrmCadastro(object frm) {
             oFrmCadastroPaises = (FrmCadastroPaises) frm;
         }
 
-        public override void Incluir() {
+		public override void ConhecaObjeto(object obj) {
+			oPais = (Paises) obj;
+		}
+
+		public override void Incluir() {
             oFrmCadastroPaises.ConhecaObjeto(oPais);
             oFrmCadastroPaises.LimpaTxt();
             oFrmCadastroPaises.ShowDialog();
+
             CarregaLV();
+            SalvaObjetoLista();
         }
 
         public override void Alterar() {
@@ -54,9 +57,11 @@ namespace ProjetoELP4 {
             listV.Items.Add(listViewItem);
 		}
 
-		public override void ConhecaObjeto(object obj) {
-            oPais = (Paises) obj;
-        }
+		public override void SalvaObjetoLista() {
+            base.SalvaObjetoLista();
 
-    }
+            listaPaises.Add(oPais);
+		}
+
+	}
 }

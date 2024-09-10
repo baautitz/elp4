@@ -1,19 +1,17 @@
 ﻿using ProjetoELP4.Forms;
-using System;
+using ProjetoELP4.Models;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProjetoELP4 {
-    public partial class FrmConsultaEstados : ProjetoELP4.FrmConsultas {
+	public partial class FrmConsultaEstados : ProjetoELP4.FrmConsultas {
 
         FrmCadastroEstados oFrmCadastroEstados;
         Estados oEstado;
+        List<Estados> listaEstados;
         public FrmConsultaEstados() {
             InitializeComponent();
+            listaEstados = new List<Estados>();
         }
 
         public override void SetFrmCadastro(object frm) {
@@ -30,6 +28,7 @@ namespace ProjetoELP4 {
             oFrmCadastroEstados.ShowDialog();
 
             CarregaLV();
+            SalvaObjetoLista();
         }
 
         public override void Alterar() {
@@ -56,6 +55,12 @@ namespace ProjetoELP4 {
             listViewItem.SubItems.Add(oEstado.OPais.Pais);
 
             listV.Items.Add(listViewItem);
+		}
+
+		public override void SalvaObjetoLista() {
+			base.SalvaObjetoLista();
+
+			listaEstados.Add(oEstado);
 		}
 
 	}
