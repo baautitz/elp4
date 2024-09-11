@@ -26,6 +26,7 @@
 			this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Estado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Pais = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.UF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// listV
@@ -33,6 +34,7 @@
 			this.listV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Codigo,
             this.Estado,
+            this.UF,
             this.Pais});
 			// 
 			// Codigo
@@ -48,6 +50,10 @@
 			// 
 			this.Pais.Text = "País";
 			this.Pais.Width = 240;
+			// 
+			// UF
+			// 
+			this.UF.Text = "UF";
 			// 
 			// FrmConsultaEstados
 			// 
@@ -65,5 +71,6 @@
 		private System.Windows.Forms.ColumnHeader Codigo;
 		private System.Windows.Forms.ColumnHeader Estado;
 		private System.Windows.Forms.ColumnHeader Pais;
+		private System.Windows.Forms.ColumnHeader UF;
 	}
 }

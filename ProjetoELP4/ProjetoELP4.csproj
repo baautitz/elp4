@@ -115,6 +115,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmCadastroCidades.resx">
       <DependentUpon>FrmCadastroCidades.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCadastroEstados.resx">
       <DependentUpon>FrmCadastroEstados.cs</DependentUpon>

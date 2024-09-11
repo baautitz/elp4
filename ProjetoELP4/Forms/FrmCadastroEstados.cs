@@ -53,7 +53,11 @@ namespace ProjetoELP4.Forms {
 
         public override void Salvar() {
             base.Salvar();
-            oEstado.Codigo = Convert.ToInt32(txtCodigo.Text);
+
+            int codigo = 0;
+            int.TryParse(txtCodigo.Text, out codigo);
+
+        	oEstado.Codigo = codigo;
             oEstado.Estado = txtEstado.Text;
             oEstado.UF = txtUF.Text;
         }

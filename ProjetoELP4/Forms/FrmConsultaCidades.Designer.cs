@@ -26,6 +26,7 @@
 			this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Cidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Estado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.DDD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// listV
@@ -33,6 +34,7 @@
 			this.listV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Codigo,
             this.Cidade,
+            this.DDD,
             this.Estado});
 			// 
 			// Codigo
@@ -48,6 +50,10 @@
 			// 
 			this.Estado.Text = "Estado";
 			this.Estado.Width = 240;
+			// 
+			// DDD
+			// 
+			this.DDD.Text = "DDD";
 			// 
 			// FrmConsultaCidades
 			// 
@@ -65,5 +71,6 @@
 		private System.Windows.Forms.ColumnHeader Codigo;
 		private System.Windows.Forms.ColumnHeader Cidade;
 		private System.Windows.Forms.ColumnHeader Estado;
+		private System.Windows.Forms.ColumnHeader DDD;
 	}
 }

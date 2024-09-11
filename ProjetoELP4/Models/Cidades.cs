@@ -1,12 +1,7 @@
 ﻿using ProjetoELP4.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoELP4 {
-    internal class Cidades : Pai {
+	internal class Cidades : Pai {
 
         protected string cidade;
         protected string ddd;

@@ -47,7 +47,11 @@ namespace ProjetoELP4 {
 
         public override void Salvar() {
             base.Salvar();
-            oPais.Codigo = Convert.ToInt32(txtCodigo.Text);
+
+            int codigo = 0;
+            int.TryParse(txtCodigo.Text, out codigo);
+
+			oPais.Codigo = codigo ;
             oPais.Pais = txtPais.Text;
             oPais.Sigla = txtSigla.Text;
             oPais.DDI = txtDDI.Text;

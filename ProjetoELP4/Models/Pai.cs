@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetoELP4.Models {
-    internal class Pai {
+﻿namespace ProjetoELP4.Models {
+	internal class Pai {
 
         private int codigo;
         private string dataCadastro;

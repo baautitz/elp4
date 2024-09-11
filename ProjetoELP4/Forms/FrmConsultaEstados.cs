@@ -1,66 +1,81 @@
 ﻿using ProjetoELP4.Forms;
-using ProjetoELP4.Models;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProjetoELP4 {
 	public partial class FrmConsultaEstados : ProjetoELP4.FrmConsultas {
 
-        FrmCadastroEstados oFrmCadastroEstados;
-        Estados oEstado;
-        List<Estados> listaEstados;
-        public FrmConsultaEstados() {
-            InitializeComponent();
-            listaEstados = new List<Estados>();
-        }
+		FrmCadastroEstados oFrmCadastroEstados;
+		Estados oEstado;
+		List<Estados> listaEstados;
 
-        public override void SetFrmCadastro(object frm) {
-            oFrmCadastroEstados = (FrmCadastroEstados) frm;
-        }
+		public FrmConsultaEstados() {
+			InitializeComponent();
+			listaEstados = new List<Estados>();
+		}
 
-        public override void ConhecaObjeto(object obj) {
-            oEstado = (Estados) obj;
-        }
+		public override void SetFrmCadastro(object frm) {
+			oFrmCadastroEstados = (FrmCadastroEstados) frm;
+		}
 
-        public override void Incluir() {
-            oFrmCadastroEstados.ConhecaObjeto(oEstado);
-            oFrmCadastroEstados.LimpaTxt();
-            oFrmCadastroEstados.ShowDialog();
+		public override void ConhecaObjeto(object obj) {
+			oEstado = (Estados) obj;
+		}
 
-            CarregaLV();
-            SalvaObjetoLista();
-        }
+		public override void Incluir() {
+			oFrmCadastroEstados.ConhecaObjeto(oEstado);
+			oFrmCadastroEstados.LimpaTxt();
+			oFrmCadastroEstados.ShowDialog();
 
-        public override void Alterar() {
-            oFrmCadastroEstados.LimpaTxt();
-            oFrmCadastroEstados.ConhecaObjeto(oEstado);
-            oFrmCadastroEstados.CarregaTxt();
-            oFrmCadastroEstados.ShowDialog();
-        }
+			SalvaObjetoLista();
+			CarregaLV();
+		}
 
-        public override void Excluir() {
-            oFrmCadastroEstados.LimpaTxt();
-            oFrmCadastroEstados.ConhecaObjeto(oEstado);
-            oFrmCadastroEstados.CarregaTxt();
-            oFrmCadastroEstados.BloqueiaTxt();
-            oFrmCadastroEstados.ShowDialog();
-            oFrmCadastroEstados.DesbloqueiaTxt();
-        }
+		public override void Alterar() {
+			oFrmCadastroEstados.LimpaTxt();
+			oFrmCadastroEstados.ConhecaObjeto(oEstado);
+			oFrmCadastroEstados.CarregaTxt();
+			oFrmCadastroEstados.ShowDialog();
+		}
+
+		public override void Excluir() {
+			oFrmCadastroEstados.LimpaTxt();
+			oFrmCadastroEstados.ConhecaObjeto(oEstado);
+			oFrmCadastroEstados.CarregaTxt();
+			oFrmCadastroEstados.BloqueiaTxt();
+			oFrmCadastroEstados.ShowDialog();
+			oFrmCadastroEstados.DesbloqueiaTxt();
+		}
 
 		public override void CarregaLV() {
 			base.CarregaLV();
 
-            ListViewItem listViewItem = new ListViewItem(oEstado.Codigo.ToString());
-            listViewItem.SubItems.Add(oEstado.Estado);
-            listViewItem.SubItems.Add(oEstado.OPais.Pais);
+			listV.Items.Clear();
 
-            listV.Items.Add(listViewItem);
+			foreach (Estados estado in listaEstados) {
+				ListViewItem listViewItem = new ListViewItem(estado.Codigo.ToString());
+				listViewItem.SubItems.Add(estado.Estado);
+				listViewItem.SubItems.Add(estado.UF);
+				listViewItem.SubItems.Add(estado.OPais.Pais);
+
+				listV.Items.Add(listViewItem);
+			}
 		}
 
 		public override void SalvaObjetoLista() {
 			base.SalvaObjetoLista();
 
-			listaEstados.Add(oEstado);
+			Estados estado = new Estados() {
+				Codigo = oEstado.Codigo,
+				Estado = oEstado.Estado,
+				UF = oEstado.UF,
+				OPais = oEstado.OPais
+			};
+
+			if (estado.Codigo == 0) return;
+			if (listaEstados.Exists(e => e.Codigo == estado.Codigo)) return;
+
+			listaEstados.Add(estado);
 		}
 
 	}
