@@ -1,10 +1,10 @@
 ﻿namespace ProjetoELP4.Models {
 	internal class Pai {
 
-        private int codigo;
-        private string dataCadastro;
-        private string dataUltimaAtt;
-        private int codigoUsuario;
+        protected int codigo;
+        protected string dataCadastro;
+        protected string dataUltimaAtt;
+        protected int codigoUsuario;
 
         public Pai(int codigo, string dataCadastro, string dataUltimaAtt, int codigoUsuario) {
             this.codigo = codigo;

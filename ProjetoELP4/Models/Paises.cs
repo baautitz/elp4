@@ -22,6 +22,10 @@ namespace ProjetoELP4 {
             this.moeda = moeda;
         }
 
+        public Paises Clone() {
+            return new Paises(codigo, pais, ddi, sigla, moeda);
+        }
+
         public string Pais {
             get => pais;
             set => pais = value;

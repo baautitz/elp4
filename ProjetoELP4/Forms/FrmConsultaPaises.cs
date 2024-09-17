@@ -65,16 +65,7 @@ namespace ProjetoELP4 {
 		public override void SalvaObjetoLista() {
 			base.SalvaObjetoLista();
 
-			Paises pais = new Paises() {
-				Codigo = oPais.Codigo,
-				DataCadastro = oPais.DataCadastro,
-				DataUltimaAtt = oPais.DataUltimaAtt,
-				CodigoUsuario = oPais.CodigoUsuario,
-				Pais = oPais.Pais,
-				DDI = oPais.DDI,
-				Sigla = oPais.Sigla,
-				Moeda = oPais.Moeda
-			};
+			Paises pais = oPais.Clone();
 
 			if (pais.Codigo == 0) return;
 			if (listaPaises.Exists(p => p.Codigo == pais.Codigo)) return;
