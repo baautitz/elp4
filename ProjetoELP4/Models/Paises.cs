@@ -22,7 +22,7 @@ namespace ProjetoELP4 {
             this.moeda = moeda;
         }
 
-        public Paises Clone() {
+        public Paises Clonar() {
             return new Paises(codigo, pais, ddi, sigla, moeda);
         }
 

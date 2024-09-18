@@ -65,6 +65,8 @@
       <DependentUpon>FrmCadastroPaises.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cidades.cs" />
+    <Compile Include="Models\Colecoes.cs" />
+    <Compile Include="Models\ColecoesPaises.cs" />
     <Compile Include="Models\Estados.cs" />
     <Compile Include="Forms\FrmCadastros.cs">
       <SubType>Form</SubType>

@@ -65,7 +65,7 @@ namespace ProjetoELP4 {
 		public override void SalvaObjetoLista() {
 			base.SalvaObjetoLista();
 
-			Cidades cidade = aCidade.Clone();
+			Cidades cidade = aCidade.Clonar();
 
 			if (cidade.Codigo == 0) return;
 			if (listaCidades.Exists(c => c.Codigo == cidade.Codigo)) return;

@@ -19,8 +19,8 @@ namespace ProjetoELP4 {
             this.oPais = oPais;
         }
 
-        public Estados Clone() {
-            return new Estados(codigo, estado, uf, oPais.Clone());
+        public Estados Clonar() {
+            return new Estados(codigo, estado, uf, oPais.Clonar());
         }
 
         public string Estado {

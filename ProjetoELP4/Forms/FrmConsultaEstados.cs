@@ -65,7 +65,7 @@ namespace ProjetoELP4 {
 		public override void SalvaObjetoLista() {
 			base.SalvaObjetoLista();
 
-			Estados estado = oEstado.Clone();
+			Estados estado = oEstado.Clonar();
 
 			if (estado.Codigo == 0) return;
 			if (listaEstados.Exists(e => e.Codigo == estado.Codigo)) return;
