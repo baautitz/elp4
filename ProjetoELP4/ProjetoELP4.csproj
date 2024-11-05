@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,68 +61,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FrmCadastroCidades.cs">
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\ControllerCidades.cs" />
+    <Compile Include="Controllers\ControllerEstados.cs" />
+    <Compile Include="Controllers\ControllerPaises.cs" />
+    <Compile Include="Data\Banco.cs" />
+    <Compile Include="Data\DAOs\DAO.cs" />
+    <Compile Include="Data\DAOs\DAOCidades.cs" />
+    <Compile Include="Data\DAOs\DAOEstados.cs" />
+    <Compile Include="Data\DAOs\DAOPaises.cs" />
+    <Compile Include="Views\Cadastros\FrmCadastroCidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCadastroCidades.Designer.cs">
+    <Compile Include="Views\Cadastros\FrmCadastroCidades.Designer.cs">
       <DependentUpon>FrmCadastroCidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmCadastroEstados.cs">
+    <Compile Include="Views\Cadastros\FrmCadastroEstados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCadastroEstados.Designer.cs">
+    <Compile Include="Views\Cadastros\FrmCadastroEstados.Designer.cs">
       <DependentUpon>FrmCadastroEstados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmCadastroPaises.cs">
+    <Compile Include="Views\Cadastros\FrmCadastroPaises.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCadastroPaises.Designer.cs">
+    <Compile Include="Views\Cadastros\FrmCadastroPaises.Designer.cs">
       <DependentUpon>FrmCadastroPaises.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cidades.cs" />
-    <Compile Include="Models\Colecoes.cs" />
-    <Compile Include="Models\ColecoesPaises.cs" />
+    <Compile Include="Colecoes\Colecao.cs" />
+    <Compile Include="Colecoes\ColecaoPaises.cs" />
     <Compile Include="Models\Estados.cs" />
-    <Compile Include="Forms\FrmCadastros.cs">
+    <Compile Include="Views\Cadastros\FrmCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmCadastros.Designer.cs">
+    <Compile Include="Views\Cadastros\FrmCadastros.Designer.cs">
       <DependentUpon>FrmCadastros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmConsultaCidades.cs">
+    <Compile Include="Views\Consultas\FrmConsultaCidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmConsultaCidades.Designer.cs">
+    <Compile Include="Views\Consultas\FrmConsultaCidades.Designer.cs">
       <DependentUpon>FrmConsultaCidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmConsultaEstados.cs">
+    <Compile Include="Views\Consultas\FrmConsultaEstados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmConsultaEstados.Designer.cs">
+    <Compile Include="Views\Consultas\FrmConsultaEstados.Designer.cs">
       <DependentUpon>FrmConsultaEstados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmConsultaPaises.cs">
+    <Compile Include="Views\Consultas\FrmConsultaPaises.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmConsultaPaises.Designer.cs">
+    <Compile Include="Views\Consultas\FrmConsultaPaises.Designer.cs">
       <DependentUpon>FrmConsultaPaises.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmConsultas.cs">
+    <Compile Include="Views\Consultas\FrmConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmConsultas.Designer.cs">
+    <Compile Include="Views\Consultas\FrmConsultas.Designer.cs">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPai.cs">
+    <Compile Include="Views\FrmPai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPai.Designer.cs">
+    <Compile Include="Views\FrmPai.Designer.cs">
       <DependentUpon>FrmPai.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPrincipal.cs">
+    <Compile Include="Views\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPrincipal.Designer.cs">
+    <Compile Include="Views\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces.cs" />
@@ -115,35 +139,35 @@
     <Compile Include="Models\Paises.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FrmCadastroCidades.resx">
+    <EmbeddedResource Include="Views\Cadastros\FrmCadastroCidades.resx">
       <DependentUpon>FrmCadastroCidades.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCadastroEstados.resx">
+    <EmbeddedResource Include="Views\Cadastros\FrmCadastroEstados.resx">
       <DependentUpon>FrmCadastroEstados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCadastroPaises.resx">
+    <EmbeddedResource Include="Views\Cadastros\FrmCadastroPaises.resx">
       <DependentUpon>FrmCadastroPaises.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCadastros.resx">
+    <EmbeddedResource Include="Views\Cadastros\FrmCadastros.resx">
       <DependentUpon>FrmCadastros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmConsultaCidades.resx">
+    <EmbeddedResource Include="Views\Consultas\FrmConsultaCidades.resx">
       <DependentUpon>FrmConsultaCidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmConsultaEstados.resx">
+    <EmbeddedResource Include="Views\Consultas\FrmConsultaEstados.resx">
       <DependentUpon>FrmConsultaEstados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmConsultaPaises.resx">
+    <EmbeddedResource Include="Views\Consultas\FrmConsultaPaises.resx">
       <DependentUpon>FrmConsultaPaises.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmConsultas.resx">
+    <EmbeddedResource Include="Views\Consultas\FrmConsultas.resx">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPai.resx">
+    <EmbeddedResource Include="Views\FrmPai.resx">
       <DependentUpon>FrmPai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPrincipal.resx">
+    <EmbeddedResource Include="Views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -167,6 +191,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BD_2024-2_ELP4.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BD_2024-2_ELP4_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>BD_2024-2_ELP4.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

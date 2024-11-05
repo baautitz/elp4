@@ -1,48 +1,57 @@
-﻿using ProjetoELP4.Forms;
+﻿using ProjetoELP4.Controllers;
+using ProjetoELP4.Forms;
 
 namespace ProjetoELP4 {
-	internal class Interfaces {
+    internal class Interfaces {
 
-		FrmConsultaPaises frmConsultaPaises;
-		FrmConsultaEstados frmConsultaEstados;
-		FrmConsultaCidades frmConsultaCidades;
+        FrmConsultaPaises frmConsultaPaises;
+        FrmConsultaEstados frmConsultaEstados;
+        FrmConsultaCidades frmConsultaCidades;
 
-		FrmCadastroPaises frmCadastroPaises;
-		FrmCadastroEstados frmCadastroEstados;
-		FrmCadastroCidades frmCadastroCidades;
+        FrmCadastroPaises frmCadastroPaises;
+        FrmCadastroEstados frmCadastroEstados;
+        FrmCadastroCidades frmCadastroCidades;
 
-		public Interfaces() {
-			frmConsultaPaises = new FrmConsultaPaises();
-			frmConsultaEstados = new FrmConsultaEstados();
-			frmConsultaCidades = new FrmConsultaCidades();
+        ControllerPaises controllerPaises;
+        ControllerEstados controllerEstados;
+        ControllerCidades controllerCidades;
 
-			frmCadastroPaises = new FrmCadastroPaises();
-			frmCadastroEstados = new FrmCadastroEstados();
-			frmCadastroCidades = new FrmCadastroCidades();
+        public Interfaces() {
+            frmConsultaPaises = new FrmConsultaPaises();
+            frmConsultaEstados = new FrmConsultaEstados();
+            frmConsultaCidades = new FrmConsultaCidades();
 
-			frmConsultaPaises.SetFrmCadastro(frmCadastroPaises);
-			
-			frmConsultaEstados.SetFrmCadastro(frmCadastroEstados);
-			frmCadastroEstados.SetFrmConsultaPaises(frmConsultaPaises);
+            frmCadastroPaises = new FrmCadastroPaises();
+            frmCadastroEstados = new FrmCadastroEstados();
+            frmCadastroCidades = new FrmCadastroCidades();
+
+            controllerPaises = new ControllerPaises();
+            controllerEstados = new ControllerEstados();
+            controllerCidades = new ControllerCidades();
+
+            frmConsultaPaises.SetFrmCadastro(frmCadastroPaises);
+
+            frmConsultaEstados.SetFrmCadastro(frmCadastroEstados);
+            frmCadastroEstados.SetFrmConsultaPaises(frmConsultaPaises);
 
             frmConsultaCidades.SetFrmCadastro(frmCadastroCidades);
-			frmCadastroCidades.SetFrmConsultaEstados(frmConsultaEstados);
+            frmCadastroCidades.SetFrmConsultaEstados(frmConsultaEstados);
         }
 
-		public void PecaPaises(object obj) {
-			frmConsultaPaises.ConhecaObjeto(obj);
-			frmConsultaPaises.ShowDialog();
-		}
+        public void PecaPaises(object obj) {
+            frmConsultaPaises.ConhecaObjeto(obj, controllerPaises);
+            frmConsultaPaises.ShowDialog();
+        }
 
-		public void PecaEstados(object obj) {
-            frmConsultaEstados.ConhecaObjeto(obj);
+        public void PecaEstados(object obj) {
+            frmConsultaEstados.ConhecaObjeto(obj, controllerEstados);
             frmConsultaEstados.ShowDialog();
-		}
+        }
 
-		public void PecaCidades(object obj) {
-            frmConsultaCidades.ConhecaObjeto(obj);
+        public void PecaCidades(object obj) {
+            frmConsultaCidades.ConhecaObjeto(obj, controllerCidades);
             frmConsultaCidades.ShowDialog();
-		}
+        }
 
-	}
+    }
 }
