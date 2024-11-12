@@ -16,7 +16,7 @@ namespace ProjetoELP4.Data {
                     return null;
                 }
 
-                int codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
+                int codigo = reader.GetInt32(reader.GetOrdinal("CodigoPais"));
                 string pais = reader.GetString(reader.GetOrdinal("pais"));
                 string ddi = reader.GetString(reader.GetOrdinal("ddi"));
                 string sigla = reader.GetString(reader.GetOrdinal("sigla"));

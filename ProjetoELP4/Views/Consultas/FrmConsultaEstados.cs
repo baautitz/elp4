@@ -1,5 +1,6 @@
 ﻿using ProjetoELP4.Controllers;
 using ProjetoELP4.Forms;
+using ProjetoELP4.Models;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -56,7 +57,10 @@ namespace ProjetoELP4 {
 
 			listV.Items.Clear();
 
-			foreach (Estados estado in listaEstados) {
+            ColecaoEstados colecaoEstados = (ColecaoEstados) aControllerEstados.CarregaTudo();
+            if (colecaoEstados == null) return;
+
+            foreach (Estados estado in colecaoEstados.ListaTudo()) {
 				ListViewItem listViewItem = new ListViewItem(estado.Codigo.ToString());
 				listViewItem.SubItems.Add(estado.Estado);
 				listViewItem.SubItems.Add(estado.UF);
@@ -77,5 +81,8 @@ namespace ProjetoELP4 {
 			listaEstados.Add(estado);
 		}
 
-	}
+        private void FrmConsultaEstados_Load(object sender, System.EventArgs e) {
+			CarregaLV();
+        }
+    }
 }

@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colecoes\ColecaoCidades.cs" />
+    <Compile Include="Colecoes\ColecaoEstados.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ControllerCidades.cs" />
     <Compile Include="Controllers\ControllerEstados.cs" />

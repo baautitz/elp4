@@ -1,5 +1,6 @@
 ﻿using ProjetoELP4.Controllers;
 using ProjetoELP4.Forms;
+using ProjetoELP4.Models;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -56,7 +57,10 @@ namespace ProjetoELP4 {
 
 			listV.Items.Clear();
 
-			foreach (Cidades cidade in listaCidades) {
+			ColecaoCidades colecaoCidades = (ColecaoCidades) aControllerCidades.CarregaTudo();
+            if (colecaoCidades == null) return;
+
+            foreach (Cidades cidade in colecaoCidades.ListaTudo()) {
 				ListViewItem listViewItem = new ListViewItem(cidade.Codigo.ToString());
 				listViewItem.SubItems.Add(cidade.Cidade);
 				listViewItem.SubItems.Add(cidade.DDD);
@@ -76,5 +80,9 @@ namespace ProjetoELP4 {
 
 			listaCidades.Add(cidade);
 		}
-	}
+
+        private void FrmConsultaCidades_Load(object sender, System.EventArgs e) {
+			CarregaLV();
+        }
+    }
 }

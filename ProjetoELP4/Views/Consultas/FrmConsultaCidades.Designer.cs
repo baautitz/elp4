@@ -23,46 +23,47 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.Cidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.Estado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.DDD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.SuspendLayout();
-			// 
-			// listV
-			// 
-			this.listV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Estado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DDD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SuspendLayout();
+            // 
+            // listV
+            // 
+            this.listV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Codigo,
             this.Cidade,
             this.DDD,
             this.Estado});
-			// 
-			// Codigo
-			// 
-			this.Codigo.Text = "Código";
-			// 
-			// Cidade
-			// 
-			this.Cidade.Text = "Cidade";
-			this.Cidade.Width = 472;
-			// 
-			// Estado
-			// 
-			this.Estado.Text = "Estado";
-			this.Estado.Width = 240;
-			// 
-			// DDD
-			// 
-			this.DDD.Text = "DDD";
-			// 
-			// FrmConsultaCidades
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Name = "FrmConsultaCidades";
-			this.Text = "Consulta - Cidades";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            // 
+            // Codigo
+            // 
+            this.Codigo.Text = "Código";
+            // 
+            // Cidade
+            // 
+            this.Cidade.Text = "Cidade";
+            this.Cidade.Width = 472;
+            // 
+            // Estado
+            // 
+            this.Estado.Text = "Estado";
+            this.Estado.Width = 240;
+            // 
+            // DDD
+            // 
+            this.DDD.Text = "DDD";
+            // 
+            // FrmConsultaCidades
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "FrmConsultaCidades";
+            this.Text = "Consulta - Cidades";
+            this.Load += new System.EventHandler(this.FrmConsultaCidades_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
